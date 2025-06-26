@@ -5,12 +5,14 @@ import { Token } from '../utils/token-service.js'
 import {
     signUpSalesmanValidator,
     signInSalesmanValidator,
-    confirmSignInSalesmanValidator
+    confirmSignInSalesmanValidator,
+    updateSalesmanValidator
 } from '../validation/salesman.validation.js'
 import config from '../config/index.js'
 import { generateOTP } from '../helpers/generate-otp.js'
 import NodeCache from 'node-cache'
 import { transporter } from '../helpers/send-mail.js'
+import { isValidObjectId } from 'mongoose'
 
 const token = new Token();
 const cache = new NodeCache();
@@ -174,4 +176,78 @@ export class SalesmanController {
       return handleError(res, error)
     }
   }
+
+  async createSalesman(req, res){
+          try{
+              const { value, error } = createSalesmanValidator(req.body)
+              if(error){
+                  return handleError(res, error, 422)
+              }
+              const salesman = await Salesman.create(value)
+              return successRes(res, salesman)
+          }catch(error){
+              return handleError(res, error)
+          }
+      }
+  
+      async getAllSalesman(req,res){
+          try{
+              const salesman = await Salesman.find()
+              return successRes(res, salesman)
+          }catch(error){
+              return handleError(res, error)
+          }
+      }
+      async getSalesmanById (req, res){
+          try{
+              const id = req.params.id;
+              const salesman = await Salesman.findById(id)
+              return successRes(res, salesman)
+          }catch(error){
+              return handleError(res, error)
+          }
+      }
+  
+      async updateSalesman (req, res) {
+          try{
+              const id = req.params.id;
+              const salesman = await SalesmanController.findSalesmanById(res, id)
+              const { value, error } = updateSalesmanValidator(req.body)
+              if(error){
+                  return handleError(res, error, 422)
+              }
+              const updateSalesman = await Salesman.findByIdAndUpdate(id, value,{new:true})
+              return successRes(res, updateSalesman)
+          }catch(error){
+              return handleError(res, error)
+          }
+      }
+  
+      async deleteSalesman(req, res){
+          try{
+              const id = req.params.id;
+              await SalesmanController.findSalesmanById(res, id)
+              await Salesman.findByIdAndDelete(id)
+              return successRes(res, {message: 'Salesman deleted successfuly'})
+          }catch(error){
+              return handleError(res, error)
+          }
+      }
+  
+      static async findSalesmanById(res, id){
+          try{
+              if(!isValidObjectId(id)){
+                  return handleError(res, 'Invalid objected ID', 400)
+              }
+              const salesman = await Salesman.findById(id)
+              if(!salesman){
+                  return handleError(res, 'Salesman not found ', 404)
+              }
+              return salesman
+          }catch(error){
+              return handleError(res, error)
+          }
+      }
+
+
 }

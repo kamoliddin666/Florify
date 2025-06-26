@@ -38,3 +38,14 @@ export const  updateClientValidator = (data) =>{
     })
     return client.validate(data)
 }
+
+export const  createClientValidator = (data) =>{
+    const client = Joi.required({
+        name: Joi.string().required(),
+        phone_number: Joi.string().regex(/^\+998[0-9]{9}$/).required(),
+        address: Joi.string().required(),
+        email: Joi.string().email().required(),
+        hashedPassword: Joi.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#-])[A-Za-z\d@$!%*?&.#-]{8,20}$/).required()
+    })
+    return client.validate(data)
+}

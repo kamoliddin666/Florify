@@ -12,6 +12,11 @@ router
     .post('/confirm-signin', AuthGuard, controller.confirmSignIn)
     .post('/token', controller.newAccessToken)
     .post('/logout',AuthGuard,RolesGuard('superadmin'), controller.logOut)
+    .get('/', controller.getAllSalesman)
+    .get('/:id', controller.getSalesmanById)
+    .patch('/:id', controller.updateSalesman)
+    .delete('/:id', controller.deleteSalesman)
+
 
 export default router;
     

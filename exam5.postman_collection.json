@@ -1,0 +1,1485 @@
+{
+	"info": {
+		"_postman_id": "8c1efaac-2208-4550-b744-31b8ec10397e",
+		"name": "exam5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45442995"
+	},
+	"item": [
+		{
+			"name": "AdminController",
+			"item": [
+				{
+					"name": "SignInSuperAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwODY4Nzk1LCJleHAiOjE3NTA5NTUxOTV9.bns6ErljpD06YHTPZyNoGy9U-7hAr0yIpbEo9un_t7k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"boribosar\",\n    \"hashedPassword\": \"6666\"\n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwODY4Nzk1LCJleHAiOjE3NTA5NTUxOTV9.bns6ErljpD06YHTPZyNoGy9U-7hAr0yIpbEo9un_t7k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Usmon\",\n    \"email\": \"kUsmon17@gmail.com\",\n    \"phone\": \"+998970222815\",\n    \"hashedPassword\": \"Usmon!123\"\n    \n    \n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAdmin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"USmon\",\n    \"password\": \"dang!Dang7\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/getAllAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"getAllAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdminById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"USmon\",\n    \"password\": \"dang!Dang7\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/getAdminById/685c27709ab006ea48071c40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"getAdminById",
+								"685c27709ab006ea48071c40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchAdmin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Asilbek\",\n    \"email\": \"kAsilbek17@gmail.com\",\n    \"phone\": \"+998970222814\",\n    \"hashedPassword\": \"Asilbek!123\"\n    \n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/updateAdminById/685c27709ab006ea48071c40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"updateAdminById",
+								"685c27709ab006ea48071c40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/admin/deleteAdminById/685c27709ab006ea48071c40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"deleteAdminById",
+								"685c27709ab006ea48071c40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signUpAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"AliUsman\",\n    \"email\": \"kuchukcha12@gmail.com\",\n    \"phone\": \"+998975556633\",\n    \"hashedPassword\": \"dangDang!123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signInAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"AliUsman\",\n    \"hashedPassword\": \"dangDang!123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adminLogaut",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWNmMDkwN2E3ODc4ODkwZTJkNzM5ZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDkyMzQxMCwiZXhwIjoxNzUxMDA5ODEwfQ.9TUPikMs0thVIuUbfN2KR5NARegvy5rqL7f4FI06N1c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/admin/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SalesmanController",
+			"item": [
+				{
+					"name": "salesmanCrud",
+					"item": [
+						{
+							"name": "New Request",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Valibk\",\n    \"full_name\": \"VAliek\",\n    \"phone_number\": \"+998394442881\",\n    \"address\": \"Muqumiy_street_636\",\n    \"email\": \"ktoshpulatov17@gmail.com\",\n    \"hashedPassword\": \"alUsBek!222\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/salesman",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"salesman"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getByID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Valibk\",\n    \"full_name\": \"VAliek\",\n    \"phone_number\": \"+998394442881\",\n    \"address\": \"Muqumiy_street_636\",\n    \"email\": \"ktoshpulatov17@gmail.com\",\n    \"hashedPassword\": \"alUsBek!222\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/salesman/685d2a0b2cbbd88f338b3e15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"salesman",
+										"685d2a0b2cbbd88f338b3e15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Aziz\",\n    \"full_name\": \"VAliek\",\n    \"phone_number\": \"+998394442881\",\n    \"address\": \"Muqumiy_street_636\",\n    \"email\": \"ktoshpulatov17@gmail.com\",\n    \"hashedPassword\": \"alUsBek!222\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/salesman/685d2a0b2cbbd88f338b3e15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"salesman",
+										"685d2a0b2cbbd88f338b3e15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Aziz\",\n    \"full_name\": \"VAliek\",\n    \"phone_number\": \"+998394442881\",\n    \"address\": \"Muqumiy_street_636\",\n    \"email\": \"ktoshpulatov17@gmail.com\",\n    \"hashedPassword\": \"alUsBek!222\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/salesman/685d2a0b2cbbd88f338b3e15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"salesman",
+										"685d2a0b2cbbd88f338b3e15"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "signUpSalesman",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Alibek\",\n    \"full_name\": \"UsmonAliBek\",\n    \"phone_number\": \"+998994442885\",\n    \"address\": \"Muqumiy_street_666\",\n    \"email\": \"fuqasam22@gmail.com\",\n    \"hashedPassword\": \"aliUsmanBek!222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/salesman/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"salesman",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signInSalesman",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"email\": \"ktoshpulatov17@gmail.com\",\n    \"hashedPassword\": \"alUsBek!222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/salesman/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"salesman",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConfirmSalesman",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\": \"ktoshpulatov17@gmail.com\",\n     \"otp\": \"866994\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/salesman/confirm-signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"salesman",
+								"confirm-signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogautSelesman",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/salesman/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"salesman",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ClientController",
+			"item": [
+				{
+					"name": "crudClient",
+					"item": [
+						{
+							"name": "New Request",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"AliUsman\",\n    \"hashedPassword\": \"dangDang!123\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/client",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BYidClient",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTUyMTY0LCJleHAiOjE3NTEwMzg1NjR9.hlExFcPXckwRctmw1F3mDsdRlUN6QtWAXwj8FdGGrkQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"AliUsman\",\n    \"hashedPassword\": \"dangDang!123\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/client/685d2316c5b741cc2f68322e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client",
+										"685d2316c5b741cc2f68322e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patchClientById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTUyMTY0LCJleHAiOjE3NTEwMzg1NjR9.hlExFcPXckwRctmw1F3mDsdRlUN6QtWAXwj8FdGGrkQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Kamoliddinz\",\n    \"phone_number\": \"+998972225520\",\n    \"address\": \"Yangiyul Street\",\n    \"email\": \"ktoshpulatov17@gmail.com\",\n    \"hashedPassword\": \"dang!DangKomal11\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/client/685d2316c5b741cc2f68322e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client",
+										"685d2316c5b741cc2f68322e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTUyMTY0LCJleHAiOjE3NTEwMzg1NjR9.hlExFcPXckwRctmw1F3mDsdRlUN6QtWAXwj8FdGGrkQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/client/685d2316c5b741cc2f68322e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client",
+										"685d2316c5b741cc2f68322e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "clientsignUp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"KamoliddinB\",\n    \"phone_number\": \"+998972225524\",\n    \"address\": \"Yangiyul Street\",\n    \"email\": \"ktoshpulatov17@gmail.com\",\n    \"hashedPassword\": \"dang!DangKoma11\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/client/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientSignIn",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"phone_number\": \"+998972225528\",\n    \"hashedPassword\": \"dang!DangKoma11\",\n    \"email\": \"ktoshpulatov17@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/client/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirmSignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ktoshpulatov17@gmail.com\",\n    \"otp\": \"265168\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/client/confirm-signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"confirm-signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientLogaut",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"phone_number\": \"+998972225528\",\n    \"hashedPassword\": \"dang!DangKoma11\",\n    \"email\": \"ktoshpulatov17@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/client/logaut",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"logaut"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TokenClient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"phone_number\": \"+998972225528\",\n    \"hashedPassword\": \"dang!DangKoma11\",\n    \"email\": \"ktoshpulatov17@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/client/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CategoryController",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMxZTNjYjFiYTg0ZThkNTdkYWYyNiIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTI0ODgwLCJleHAiOjE3NTEwMTEyODB9.J0hSZOLrxfaWJKqoGwzgDb-FYJtf7jnFHZkt9NbqpcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"tv\",\n    \"description\": \"53 talik\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"tv\",\n    \"description\": \"53 talik\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"tv\",\n    \"description\": \"53 talik\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/category/685d2c5dc85115d7af8c7c81",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"685d2c5dc85115d7af8c7c81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"pech\",\n    \"description\": \"LG\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category/685d2c5dc85115d7af8c7c81",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"685d2c5dc85115d7af8c7c81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/category/685d2c5dc85115d7af8c7c81",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"685d2c5dc85115d7af8c7c81"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductController",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"IpHone\",\n    \"description\": \"Made in Dubay 1 tera\",\n    \"price\": 1500,\n    \"quantity\": 500,\n    \"color\": \"Aqua Blue\",\n    \"category_id\": \"685d2c5dc85115d7af8c7c81\" ,\n    \"salesman_id\": \"685d2a0b2cbbd88f338b3e15\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"IpHone\",\n    \"description\": \"Made in Dubay 1 tera\",\n    \"price\": 1500,\n    \"quantity\": 500,\n    \"color\": \"Aqua Blue\",\n    \"category_id\": \"685d2c5dc85115d7af8c7c81\" ,\n    \"salesman_id\": \"685d2a0b2cbbd88f338b3e15\"\n\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ByIdProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"IpHone\",\n    \"description\": \"Made in Dubay 1 tera\",\n    \"price\": 1500,\n    \"quantity\": 500,\n    \"color\": \"Aqua Blue\",\n    \"category_id\": \"685d2c5dc85115d7af8c7c81\" ,\n    \"salesman_id\": \"685d2a0b2cbbd88f338b3e15\"\n\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/685d357390ab25fd6cbdb1ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"685d357390ab25fd6cbdb1ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updtateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product/685d357390ab25fd6cbdb1ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"685d357390ab25fd6cbdb1ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product/685d357390ab25fd6cbdb1ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"685d357390ab25fd6cbdb1ad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "soldProductController",
+			"item": [
+				{
+					"name": "createSOldProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"685d45f5af1a893545910b3a\",\n    \"client_id\": \"685d2316c5b741cc2f68322e\",\n    \"quantity\":  250\n    \n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/soldProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"soldProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allGet",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"685d45f5af1a893545910b3a\",\n    \"client_id\": \"685d2316c5b741cc2f68322e\",\n    \"quantity\":  250\n    \n\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/soldProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"soldProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"685d45f5af1a893545910b3a\",\n    \"client_id\": \"685d2316c5b741cc2f68322e\",\n    \"quantity\":  250\n    \n\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/soldProduct/685d4618af1a893545910b3f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"soldProduct",
+								"685d4618af1a893545910b3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSoldProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"quantity\":  450\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/soldProduct/685d4618af1a893545910b3f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"soldProduct",
+								"685d4618af1a893545910b3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWQyMzExYzViNzQxY2MyZjY4MzIyMCIsInJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzUwOTM3MTU3LCJleHAiOjE3NTEwMjM1NTd9.S1tk14yOO94Bx34hg2S1ubr0meH9Z5fVzn-RtUf5QCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"quantity\":  450\n\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/soldProduct/685d4618af1a893545910b3f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"soldProduct",
+								"685d4618af1a893545910b3f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

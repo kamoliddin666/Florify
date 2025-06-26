@@ -6,13 +6,15 @@ import {
     confirmSignInClientValidator,
     signInClientValidator,
     signUpClientValidator,
-    updateClientValidator
+    updateClientValidator,
+    createClientValidator
 } from '../validation/client.validation.js'
 
 import config from '../config/index.js'
 import {generateOTP} from '../helpers/generate-otp.js'
 import NodeCache from 'node-cache'
-import { transporter } from '../helpers/send-mail.js'
+import { transporter } from '../helpers/send-mail.js';
+import { isValidObjectId } from 'mongoose'
 
 const token = new Token();
 const cache = new NodeCache();
@@ -146,6 +148,78 @@ export class ClientController {
       return handleError(res, error)
     }
   }
+
+  async createClient(req, res){
+            try{
+                const { value, error } = createClientValidator(req.body)
+                if(error){
+                    return handleError(res, error, 422)
+                }
+                const client = await Client.create(value)
+                return successRes(res, client)
+            }catch(error){
+                return handleError(res, error)
+            }
+        }
+    
+        async getAllClient(req,res){
+            try{
+                const client = await Client.find()
+                return successRes(res, client)
+            }catch(error){
+                return handleError(res, error)
+            }
+        }
+        async getClientById (req, res){
+            try{
+                const id = req.params.id;
+                const client = await Client.findById(id)
+                return successRes(res, client)
+            }catch(error){
+                return handleError(res, error)
+            }
+        }
+    
+        async updateClient (req, res) {
+            try{
+                const id = req.params.id;
+                const client = await ClientController.findClientById(res, id)
+                const { value, error } = updateClientValidator(req.body)
+                if(error){
+                    return handleError(res, error, 422)
+                }
+                const updateClient = await Client.findByIdAndUpdate(id, value,{new:true})
+                return successRes(res, updateClient)
+            }catch(error){
+                return handleError(res, error)
+            }
+        }
+    
+        async deleteClient(req, res){
+            try{
+                const id = req.params.id;
+                await ClientController.findClientById(res, id)
+                await Client.findByIdAndDelete(id)
+                return successRes(res, {message: 'Client deleted successfuly'})
+            }catch(error){
+                return handleError(res, error)
+            }
+        }
+    
+        static async findClientById(res, id){
+            try{
+                if(!isValidObjectId(id)){
+                    return handleError(res, 'Invalid objected ID', 400)
+                }
+                const client = await Client.findById(id)
+                if(!client){
+                    return handleError(res, 'Client not found ', 404)
+                }
+                return client
+            }catch(error){
+                return handleError(res, error)
+            }
+        }
 
      async logOut(req, res) {
           try {
